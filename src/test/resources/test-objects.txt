@@ -1,0 +1,1 @@
+{"id":"123","state":"STARTED","type":"APPLICATION_LOG","host":"Host","timestamp":"1491377495217","lineNumber":null}
