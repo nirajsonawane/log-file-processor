@@ -1,4 +1,4 @@
-package hello;
+package com.logprocessor.model;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -20,6 +20,6 @@ public class LogMessage {
 	private String host;
 	@NotNull
 	private String timestamp;
-	private Integer lineNumber;
+	private Long lineNumber;
 
 }

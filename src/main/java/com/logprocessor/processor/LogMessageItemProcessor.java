@@ -1,4 +1,4 @@
-package hello;
+package com.logprocessor.processor;
 
 import java.util.Set;
 
@@ -11,6 +11,9 @@ import javax.validation.ValidatorFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
+
+import com.logprocessor.exception.LogMessageProcessingException;
+import com.logprocessor.model.LogMessage;
 
 public class LogMessageItemProcessor implements ItemProcessor<LogMessage, LogMessage> {
 
@@ -33,7 +36,7 @@ public class LogMessageItemProcessor implements ItemProcessor<LogMessage, LogMes
 		{
 			 throw new LogMessageProcessingException("Mandetory parametr Missing at line number " +logMessage.getLineNumber());
 		}
-		log.info("Log Message {}", logMessage);
+		log.debug("Log Message {}", logMessage);
 		return logMessage;
 	}
 

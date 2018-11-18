@@ -6,3 +6,5 @@
 "host":"12345", "timestamp":1491377495217}
 {"id":"scsmbstgrc", "state":"STARTED", "timestamp":1491377495210}
 {"id":"scsmbstgrb", "state":"FINISHED", "timestamp":1491377495216}
+{"state":"FINISHED", "timestamp":1491377495216}
+{"id":"scsmbstgrb", "timestamp":1491377495216}

@@ -1,4 +1,4 @@
-package hello;
+package com.logprocessor.listener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,15 +22,10 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
 	}
 
 	@Override
-	public void afterJob(JobExecution jobExecution) {
-		if(jobExecution.getStatus() == BatchStatus.COMPLETED) {
+	public void afterJob(JobExecution jobExecution) {	
+		if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
 			log.info("!!! JOB FINISHED! Time to verify the results");
 
-			jdbcTemplate.query("SELECT id FROM LOG_MESSAGES",
-				(rs, row) -> new Person(
-					rs.getString(1),
-					rs.getString(1))
-			).forEach(person -> log.info("Found <" + person + "> in the database."));
 		}
 	}
 }

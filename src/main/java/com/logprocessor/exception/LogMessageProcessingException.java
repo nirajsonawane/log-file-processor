@@ -1,4 +1,4 @@
-package hello;
+package com.logprocessor.exception;
 
 public class LogMessageProcessingException extends RuntimeException {
 
