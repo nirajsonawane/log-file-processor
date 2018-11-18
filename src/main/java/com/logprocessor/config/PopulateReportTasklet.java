@@ -28,7 +28,7 @@ public class PopulateReportTasklet implements Tasklet {
 		String sql = "CREATE TABLE LONG_RUNING_MESSAGE (ID, EVENT_TYPE,HOST,EVENT_DURATION,ALERT) AS (SELECT \r\n"
 				+ "	 A.ID AS ID, \r\n" + "	 A.EVENT_TYPE AS EVENT_TYPE ,\r\n" + "	 A.HOST  AS HOST,\r\n"
 				+ "	 (B.EVENT_TIME_STAMP - A.EVENT_TIME_STAMP) AS EVENT_DURATION ,\r\n"
-				+ "	 CASE WHEN ( B.EVENT_TIME_STAMP - A.EVENT_TIME_STAMP) >= ?  \r\n"
+				+ "	 CASE WHEN Abs( B.EVENT_TIME_STAMP - A.EVENT_TIME_STAMP) >= ?  \r\n"
 				+ "          THEN 'TRUE' ELSE 'FALSE' \r\n" + "       END AS ALERT\r\n"
 				+ "	 FROM \"PUBLIC\".\"LOG_MESSAGES\" A ,\"PUBLIC\".\"LOG_MESSAGES\" B  WHERE A.ID=B.ID AND  A.STATE='STARTED' AND B.STATE='FINISHED') WITH DATA";
 

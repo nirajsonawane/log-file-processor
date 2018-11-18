@@ -3,6 +3,8 @@ package com.logprocessor.model;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -10,6 +12,8 @@ import lombok.ToString;
 @ToString
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class LogMessage {
 
 	@NotBlank
