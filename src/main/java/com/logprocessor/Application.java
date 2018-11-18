@@ -8,9 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class Application {
-
+  
 	public static void main(String[] args) throws Exception {
-		 validateInput(args);
+		// validateInput(args);
 		System.setProperty("file.path",	"D:\\Niraj\\Programming\\log-file-processor\\src\\main\\resources\\logData.txt");
 		SpringApplication.run(Application.class, args);
 	}

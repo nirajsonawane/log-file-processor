@@ -1,5 +1,6 @@
 package com.logprocessor.config;
 
+import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
 import org.hsqldb.util.DatabaseManagerSwing;
@@ -105,7 +106,7 @@ public class BatchConfiguration {
 				.build();
 	}
 
-	//@PostConstruct
+	@PostConstruct
 	public void getDbManager() {
 		System.setProperty("java.awt.headless", "false");
 		DatabaseManagerSwing.main(
